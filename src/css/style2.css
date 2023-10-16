@@ -59,7 +59,9 @@ button:hover{
     align-self: center;
     cursor: pointer;
 }
-
+.select_bar:hover{
+    cursor:pointer;
+}
 .main{
     display: flex;
     align-items: center;
@@ -338,7 +340,7 @@ textarea {
 }
 
 .tell__about{
-    width: 580px;
+    width: 100%;
     border-radius: 16px;
     box-shadow: 0 5.84789px 22.1511px rgba(133,94,152,.05),
                 0 5.84789px 22.1511px rgba(133,94,152,.05), 
