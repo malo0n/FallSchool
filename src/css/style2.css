@@ -92,6 +92,21 @@ button:hover{
     align-items: end;
 
 }
+.grade_bar{
+    padding: 8px;
+}
+.grade_bar div{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 8px 14px;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+.grade_bar div:hover{
+    background-color: #c5c4c4;
+}
 .create-text{
     display: block;
     font-size: 32px; 
@@ -181,7 +196,7 @@ input{
     flex-direction: column;
     position: relative;
 }
-.about__container input{
+.about__container input:not([type="checkbox"]):not([type="radio"]){
     height: 56px;
     position: relative;
     border: none;
@@ -194,6 +209,7 @@ input{
     font-size: 16px;
     
 }
+
 .about__container input:focus{
     outline: 0;
     outline-offset: 0;
@@ -206,7 +222,7 @@ input{
 }
 .gender_box input{
     width: auto;
-    height: auto;
+    
 }
 .custom-radio {
     position: absolute;
@@ -235,45 +251,6 @@ input{
   .custom-radio:checked+label::before {
         background-image: url("../img/svg/gender_radio.svg");
   }
-
-.about__container  label:not(.gender){
-    color: rgb(161, 166, 177);
-    position: absolute;
-    left: 0;
-    padding: 19px 20px;
-    pointer-events: none;
-    transition: 0.3s;
-    letter-spacing: 0.05em;
-}
-.about__container input:valid~label:not(.gender),
-.about__container input:focus~label:not(.gender){
-    color:rgb(93, 91, 102);
-    font-size: 1em;
-    transform: translateY(-41px) translateX(-10px);
-}
-
-input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
-input[type="date"] {
-    position: relative;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    color: transparent;
-    background: transparent;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button {
-     z-index: 1;
- }
-	
 
 
 textarea {
@@ -340,8 +317,11 @@ textarea {
 .picture{
     width: 140px;
     height: 140px;
-    border:1px #CDBDDB dashed;
     border-radius: 16px;
+    background-image:url("../img/avatar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
 }
 .contacts__button{
     background-color: #7953C3;
