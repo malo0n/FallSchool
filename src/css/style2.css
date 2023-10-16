@@ -216,7 +216,6 @@ input{
 }
 .gender_box{
     display: flex;
-    margin-top: 10px;
     gap: 5px;
     width: auto;
 }
@@ -267,7 +266,7 @@ textarea {
 .about__me{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
 }
 .about__me textarea:valid~label,
 .about__me textarea:focus~label{
@@ -340,7 +339,6 @@ textarea {
 
 .tell__about{
     width: 580px;
-    height: 92px;
     border-radius: 16px;
     box-shadow: 0 5.84789px 22.1511px rgba(133,94,152,.05),
                 0 5.84789px 22.1511px rgba(133,94,152,.05), 
@@ -396,7 +394,11 @@ textarea {
     transition: 0.25s;
     border: 1px solid #7953C3;
 }
-
+.info_preview p:not(.Name){
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.1;
+}
 .next_page a
 {
     text-decoration: none;
