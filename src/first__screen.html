@@ -1,160 +1,160 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Homeet</title>
-    <link rel="stylesheet" href="css/style1.css">
-    <script src="js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=, initial-scale=1.0">
+<title>Homeet</title>
+<link rel="stylesheet" href="css/style1.css">
+<script src="js/script.js"></script>
 </head>
 <body>
 
-    <header class="header">
-        <div class="main__header">
-            <img class="logo" src="img/svg/logo.svg" alt="logo">
-            <button class="sign__out">Выйти из аккаунта</button>
-        </div>
-    </header>
+<header class="header">
+    <div class="main__header">
+        <img class="logo" src="img/svg/logo.svg" alt="logo">
+        <button class="sign__out">Выйти из аккаунта</button>
+    </div>
+</header>
 
-    <main class="main">
-        <div class="profile_container">
-            <div class="profile-create">
-                <div><button class="to-main">На главную</button></div>
-                    <div class="profile_header_content">
-                        <div class="profile_header_element_1">
-                            <h3 class="create-text">Создание профиля</h3>
-                        </div>
-                        <div class="profile_header_element_2">
-                            <p class="slash">/</p>
-                            <p class="about">О себе</p>
+<main class="main">
+    <div class="profile_container">
+        <div class="profile-create">
+            <div><button class="to-main">На главную</button></div>
+                <div class="profile_header_content">
+                    <div class="profile_header_element_1">
+                        <h3 class="create-text">Создание профиля</h3>
                     </div>
-                </div>
-                <div class="progbar">
-                    <div class="minibar"></div>
+                    <div class="profile_header_element_2">
+                        <p class="slash">/</p>
+                        <p class="about">О себе</p>
                 </div>
             </div>
-            <div class="main__information">
-                <div class="first_main_block">
-                    <div class="avatar">
-                        <p style="font-weight: 600; font-size: 16px;">Аватар профиля</p>
-                        <button type="button" inputmode="img" class="avatar__button"><label for="file" style=":hover{cursor: pointer} ;">Загрузить</label></button>
-                        <input id="file" type="file" style="display: none;">
-                        <p style="font-weight: 400;font-size: 14px ; color: #aaa; line-height: 20px;">Загрузите фотографию весом не более 10мб</p>
-                    </div>
-                    <form class="about__container">
-                        <div class="name__gender">
-                            <div class="input__name">
-                                <input class="name" type="text" maxlength="50" id="name" required autocomplete="off" required>
-                                <label for="name">Имя и фамилия</label>
-                            </div>
-                            <div class="gender_box">
-                                <div class="male">
-                                    <input class="custom-radio" type="radio" name="gender" id="male" style="cursor: pointer;" required>
-                                    <label class="gender" for="male">Парень</label>
-                                </div>
-                                <div class="female">
-                                    <input class="custom-radio" type="radio"  name="gender" id = "female" style="cursor: pointer;" required>
-                                    <label class="gender" for="female">Девушка</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="date" style="margin-top: 5px;">
-                            <input class="date" type="date" id="date" required autocomplete="off" value="01.01.2000">
-                            <label for="date">Дата рождения</label>
-                        </div>
-                        <div class="telegram">
-                            <input class="telegram" type="text" id="telegram" required autocomplete="off">
-                            <label for="telegram">Телеграм</label>
-                        </div>
-                        <div class="telnum">
-                            <input class="phone" type="text" id="phone" required maxlength="11" autocomplete="off">
-                            <label for="phone">Номер телефона</label>
-                        </div>
-                        <div class="about__me">
-                            <textarea name="Me" id="about_me" cols="30" rows="10" class="info" required autocomplete="off"></textarea>
-                            <label for="about_me">О себе</label>
-                            <p style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :) </p>
-                        </div>
-                    </form>
-                </div>
-                <div class="second_main_block">
-                    <div class="preview__container">
-                        <p style="color: #5d5b66; font-weight: 400; margin-bottom: 16px; padding-left: 16px;">Так будет выглядеть твоя будущая страница</p>
-                        <div class="preview">
-                            <div class="avatar__preview">
-                                <div class="picture"></div>
-                                <button class="contacts__button">Показать контакты</button>
-                            </div>
-                            <div class="info_preview">
-                                <p id="name" style="font-size: 16px; font-weight: 600;">Имя и фамилия</p>
-                                <div style="display: flex;align-items: center; margin-top: 7px; gap: 4px;">
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 32px"></div>
-                                    <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 40px"></div>
-                                    <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 160px"></div>
-                                </div>
-                                <div style="border-radius: 8px;height: 17px; background-color: #f4f4f6; margin-top: 10px;width: 90px;padding: 3px 6px;"></div>
-                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 350px; margin-top: 10px;"></div>
-                                <div class="preferences">
-                                    <p style="font-size: 9px; font-weight: 400; color: #5d5b66; letter-spacing: 0px;">Предпочтения по жилью</p>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 20px;width: 200px; margin-top: 4px;"></div>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 15px;width: 280px; margin-top: 4px;"></div>
-                                    <div class="preferences_bar"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tell__about">
-                            <div class="tell__container">
-                                <div class="tell__text">
-                                    <p style="font-size: 16px; font-weight: 600;">Мы совсем ничего про тебя не знаем</p>
-                                    <p style="font-size: 15px; color: #5D5B66;  font-weight: 400;">Расскажи о себе.</p>
-                                    <p style="font-size: 14.8px; color: #5D5B66; font-weight: 400;">Люди пишут тем, кому доверяют. Тем более при поиске соседа.</p>
-                                </div>
-                                <div class="emoji"><img src="img/svg/emoji1.svg" alt="insmile face"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="progbar">
+                <div class="minibar"></div>
             </div>
-            <div class="next_button">
-                <form action="second__screen.html">
-                    <button class="next_page">Продолжить</button>
+        </div>
+        <div class="main__information">
+            <div class="first_main_block">
+                <div class="avatar">
+                    <p style="font-weight: 600; font-size: 16px;">Аватар профиля</p>
+                    <button type="button" inputmode="img" class="avatar__button"><label for="file" style=":hover{cursor: pointer} ;">Загрузить</label></button>
+                    <input id="file" type="file" style="display: none;">
+                    <p style="font-weight: 400;font-size: 14px ; color: #aaa; line-height: 20px;">Загрузите фотографию весом не более 10мб</p>
+                </div>
+                <form class="about__container">
+                    <div class="name__gender">
+                        <div class="input__name">
+                            <input class="name" type="text" maxlength="50" id="name" required autocomplete="off" required>
+                            <label for="name">Имя и фамилия</label>
+                        </div>
+                        <div class="gender_box">
+                            <div class="male">
+                                <input class="custom-radio" type="radio" name="gender" id="male" style="cursor: pointer;" required>
+                                <label class="gender" for="male">Парень</label>
+                            </div>
+                            <div class="female">
+                                <input class="custom-radio" type="radio"  name="gender" id = "female" style="cursor: pointer;" required>
+                                <label class="gender" for="female">Девушка</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date" style="margin-top: 5px;">
+                        <input class="date" type="date" id="date" required autocomplete="off" value="01.01.2000">
+                        <label for="date">Дата рождения</label>
+                    </div>
+                    <div class="telegram">
+                        <input class="telegram" type="text" id="telegram" required autocomplete="off">
+                        <label for="telegram">Телеграм</label>
+                    </div>
+                    <div class="telnum">
+                        <input class="phone" type="text" id="phone" required maxlength="11" autocomplete="off">
+                        <label for="phone">Номер телефона</label>
+                    </div>
+                    <div class="about__me">
+                        <textarea name="Me" id="about_me" cols="30" rows="10" class="info" required autocomplete="off"></textarea>
+                        <label for="about_me">О себе</label>
+                        <p style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :) </p>
+                    </div>
                 </form>
             </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer__main">
-            <div style="display: flex; flex-direction: column; gap: 40px;">
-                <div class="footer_support" style="display: flex; flex-direction: column; gap: 8px;">
-                    <p class="email">Support@homeet.com</p>
-                    <p class="support">Техническая поддержка</p>
-                </div>
-                <div style="display: flex;">
-                    <div class="footer__text" style="display: flex; gap:32px; width: 100%;">
-                        <p>О сервисе</p>
-                        <p>Контакты</p>
-                        <p>Политика конфиденциальности</p>
+            <div class="second_main_block">
+                <div class="preview__container">
+                    <p style="color: #5d5b66; font-weight: 400; margin-bottom: 16px; padding-left: 16px;">Так будет выглядеть твоя будущая страница</p>
+                    <div class="preview">
+                        <div class="avatar__preview">
+                            <div class="picture"></div>
+                            <button class="contacts__button">Показать контакты</button>
+                        </div>
+                        <div class="info_preview">
+                            <p id="name" style="font-size: 16px; font-weight: 600;">Имя и фамилия</p>
+                            <div style="display: flex;align-items: center; margin-top: 7px; gap: 4px;">
+                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 32px"></div>
+                                <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
+                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 40px"></div>
+                                <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
+                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 160px"></div>
+                            </div>
+                            <div style="border-radius: 8px;height: 17px; background-color: #f4f4f6; margin-top: 10px;width: 90px;padding: 3px 6px;"></div>
+                            <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 350px; margin-top: 10px;"></div>
+                            <div class="preferences">
+                                <p style="font-size: 9px; font-weight: 400; color: #5d5b66; letter-spacing: 0px;">Предпочтения по жилью</p>
+                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 20px;width: 200px; margin-top: 4px;"></div>
+                                <div style="background-color: #f4f4f6;border-radius: 6px;height: 15px;width: 280px; margin-top: 4px;"></div>
+                                <div class="preferences_bar"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 8px;">
-                        <div class="tg"></div>
-                        <div class="vk"></div>
-                        </div>    
+                    <div class="tell__about">
+                        <div class="tell__container">
+                            <div class="tell__text">
+                                <p style="font-size: 16px; font-weight: 600;">Мы совсем ничего про тебя не знаем</p>
+                                <p style="font-size: 15px; color: #5D5B66;  font-weight: 400;">Расскажи о себе.</p>
+                                <p style="font-size: 14.8px; color: #5D5B66; font-weight: 400;">Люди пишут тем, кому доверяют. Тем более при поиске соседа.</p>
+                            </div>
+                            <div class="emoji"><img src="img/svg/emoji1.svg" alt="insmile face"></div>
+                        </div>
                     </div>
-                </div>
-            <div style="border: 1px solid #7953c3;opacity: 0.2 ;width: 100%"></div>
-            <div style="display: flex;">
-                <div style="width: 100%;">
-                    <p style="font-size: 16px; font-weight: 400; color: #5D5B66;">Предложение не является публичной офертой<br>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
-                </div>
-                <div style="display: flex; align-items:end">
-                    <p style="font-size: 16px; font-weight: 400; color: #5D5B66;width:max-content;">Сделано в бвср</p>
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="next_button">
+            <form action="second__screen.html">
+                <button class="next_page">Продолжить</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer__main">
+        <div style="display: flex; flex-direction: column; gap: 40px;">
+            <div class="footer_support" style="display: flex; flex-direction: column; gap: 8px;">
+                <p class="email">Support@homeet.com</p>
+                <p class="support">Техническая поддержка</p>
+            </div>
+            <div style="display: flex;">
+                <div class="footer__text" style="display: flex; gap:32px; width: 100%;">
+                    <p>О сервисе</p>
+                    <p>Контакты</p>
+                    <p>Политика конфиденциальности</p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <div class="tg"></div>
+                    <div class="vk"></div>
+                    </div>    
+                </div>
+            </div>
+        <div style="border: 1px solid #7953c3;opacity: 0.2 ;width: 100%"></div>
+        <div style="display: flex;">
+            <div style="width: 100%;">
+                <p style="font-size: 16px; font-weight: 400; color: #5D5B66;">Предложение не является публичной офертой<br>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+            </div>
+            <div style="display: flex; align-items:end">
+                <p style="font-size: 16px; font-weight: 400; color: #5D5B66;width:max-content;">Сделано в бвср</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
