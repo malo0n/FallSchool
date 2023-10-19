@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Homeet</title>
     <link rel="stylesheet" href="css/style1.css">
 </head>
@@ -53,19 +53,17 @@
                             </div>
                             <div class="gender_box">
                                 <div class="male">
-                                    <input class="custom-radio" type="radio" name="gender" id="male"
-                                        style="cursor: pointer;" required>
+                                    <input class="custom-radio" type="radio" name="gender" id="male" style="cursor: pointer;" value="Парень" required>
                                     <label class="gender" for="male">Парень</label>
                                 </div>
                                 <div class="female">
-                                    <input class="custom-radio" type="radio" name="gender" id="female"
-                                        style="cursor: pointer;" required>
+                                    <input class="custom-radio" type="radio" name="gender" id="female" style="cursor: pointer;" value="Девушка" required>
                                     <label class="gender" for="female">Девушка</label>
                                 </div>
                             </div>
                         </div>
                         <div class="date" style="margin-top: 5px;">
-                            <input class="date" type="date" id="date" required autocomplete="off" value="01.01.2000">
+                            <input class="date" type="date" id="date" required autocomplete="off">
                             <label for="date">Дата рождения</label>
                         </div>
                         <div class="telegram">
@@ -97,12 +95,12 @@
                                 <button class="contacts__button">Показать контакты</button>
                             </div>
                             <div class="info_preview">
-                                <p id="name" style="font-size: 16px; font-weight: 600;">Имя и фамилия</p>
+                                <p class="name_preview" style="font-size: 16px; font-weight: 600;">Имя и фамилия</p>
                                 <div style="display: flex;align-items: center; margin-top: 7px; gap: 4px;">
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 32px">
+                                    <div class="preview_sex">
+                                        <p></p>
                                     </div>
-                                    <div
-                                        style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;">
+                                    <div class="preview_age">
                                     </div>
                                     <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 40px">
                                     </div>
@@ -185,7 +183,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>

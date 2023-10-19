@@ -348,12 +348,6 @@ textarea {
     display: flex;
     flex-direction: column;
 }
-
-.preview__container {
-    display: flex;
-    flex-direction: column;
-}
-
 .preview {
     width: auto;
     height: auto;
@@ -396,6 +390,22 @@ textarea {
     color: #7953C3;
 
 }
+
+.preview_sex{
+    background-color: #f4f4f6;
+    border-radius: 6px;
+    height: 11px;
+    width: 32px;
+}
+.preview_age{
+    height: 4px;
+    width: 4px;
+    background-color: #7953c3;
+    opacity: .3; 
+    border-radius: 100px;
+}
+
+
 
 .tell__about {
     width: 580px;
