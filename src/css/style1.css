@@ -51,7 +51,7 @@ label:hover {
     cursor: pointer;
 }
 
-button:hover {
+button:hover  {
     cursor: pointer;
     background-color: #7953C3;
     color: #FFF;
@@ -334,7 +334,7 @@ textarea {
 }
 
 .about__me textarea {
-    height: 150px;
+    height: 100%;
     border: none;
     width: auto;
     position: relative;
@@ -383,6 +383,7 @@ textarea {
     border-radius: 4px;
     padding: 6px 24px;
     border: 0.8px solid #7953C3;
+    display: none;
 }
 
 .contacts__button:hover {
@@ -396,15 +397,55 @@ textarea {
     border-radius: 6px;
     height: 11px;
     width: 32px;
+
 }
-.preview_age{
+.point{
     height: 4px;
     width: 4px;
     background-color: #7953c3;
     opacity: .3; 
     border-radius: 100px;
 }
+.preview_age{
+    background-color: #f4f4f6;
+    border-radius: 6px;
+    height: 11px;
+    width: 32px;
+}
+.userInfoContainer{
+    display: flex;
+    align-items:flex-start;
+}
+.accordion{
+    background-color:#fff;
+    transition: 0.2s;
+    display: none;
+    font-size: 9px;
+    justify-content: center;
+    align-items:center;
+    padding: 5px;
+    text-align: start;
+}
+.accordion img{
+    transform:rotate(0deg) ;
+}
+.accordion:hover{
+    cursor:pointer;
+}
+.aboutUserInfo{
+    background-color: #f4f4f6;
+    border-radius: 6px;
+    margin-top: 5px;
+    width: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
+.aboutUserInfo.active p{
+    overflow: auto;
+}
 
 
 .tell__about {
@@ -441,7 +482,7 @@ textarea {
     border-radius: 8px;
     box-shadow: -8px 8px 0 #7953c3, 0 6px 20px rgba(133, 94, 152, .06), 0 4px 8px rgba(133, 94, 152, .08), 0 2px 4px rgba(133, 94, 152, .08), 0 6px 20px rgba(133, 94, 152, .08), 0 6px 20px rgba(133, 94, 152, .08), 0 4px 12px rgba(133, 94, 152, .06), 0 2px 4px rgba(133, 94, 152, .06);
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 12px 20px 12px 12px;
     width: auto;
 }
