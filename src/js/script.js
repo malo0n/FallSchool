@@ -29,24 +29,23 @@ ageInput.addEventListener('change', () => {
 })
 
 //'развернуть' информацию пользователя "О себе"
-let userInfo = document.querySelector('.about__me textarea')
-let accordion = document.querySelector('.accordion');
-let accordion_arrow = document.querySelector('.accordion img');
+let userInfo = document.querySelector('.about__me textarea');
+let showMore = document.querySelector('.accordion');
 let infoBox = document.querySelector('.aboutUserInfo');
 let infoText = document.querySelector('.aboutUserInfo p');
+let infoBoxPreview = 
 userInfo.addEventListener('change', () => {
     infoText.innerHTML = userInfo.value;
+    document.querySelector('.userInfoContainerPreview').style.display = 'none';
+    document.querySelector('.userInfoContainer').style.display = "flex";
     infoBox.style.cssText ='color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; max-width:100%; word-wrap: break-word;';
-    if (infoText.offsetWidth >= 200) {
-        accordion.style.display = 'flex';
-    }
-    else{
-        accordion.style.display = 'none';
-    }
+    if (infoText.offsetWidth >= 200) showMore.style.display = "flex";
+    else showMore.style.display = 'none';
 })
-accordion.addEventListener("click", () => {
+showMore.addEventListener("click", () => {
     infoBox.classList.toggle('active');
-
+    if (showMore.src = "img/svg/show_more.svg") showMore.src = "img/svg/show_less.svg";
+    else showMore.src = "img/svg/show_more.svg";
 });
 
   

@@ -353,13 +353,13 @@ textarea {
     height: auto;
     border-radius: 32px;
     display: flex;
+    justify-content: space-around;
     box-shadow: 0 5.84789px 22.1511px rgba(133, 94, 152, .05),
         0 5.84789px 22.1511px rgba(133, 94, 152, .05),
         0 2.86674px 10.8589px rgba(133, 94, 152, .04),
         0 1.13351px 4.29362px rgba(133, 94, 152, .028);
     margin-bottom: 24px;
     padding: 20px;
-    gap: 28px;
 }
 
 .avatar__preview {
@@ -395,8 +395,8 @@ textarea {
 .preview_sex{
     background-color: #f4f4f6;
     border-radius: 6px;
-    height: 11px;
-    width: 32px;
+    height: 2.5vh;
+    width: 10vh;
 
 }
 .point{
@@ -409,11 +409,32 @@ textarea {
 .preview_age{
     background-color: #f4f4f6;
     border-radius: 6px;
-    height: 11px;
-    width: 32px;
+    height: 2.5vh;
+    width: 10vh;
+}
+.preview_univresity{
+    border-radius: 8px;
+    height: 2.5vh; 
+    background-color: #f4f4f6; 
+    width: 40vh;
+}
+.preview_job{
+    border-radius: 8px;
+    height: 3.2vh; 
+    background-color: #f4f4f6; 
+    margin-top: 10px;
+    width: 40vh;
+    padding: 3px 6px;
+}
+.userInfoContainerPreview{
+    background-color: #f4f4f6;
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 70vh;
+    height: 2.5vh;
 }
 .userInfoContainer{
-    display: flex;
+    display: none;
     align-items:flex-start;
 }
 .accordion{
@@ -425,6 +446,7 @@ textarea {
     align-items:center;
     padding: 5px;
     text-align: start;
+    margin-top: 5px;
 }
 .accordion img{
     transform:rotate(0deg) ;
@@ -435,16 +457,20 @@ textarea {
 .aboutUserInfo{
     background-color: #f4f4f6;
     border-radius: 6px;
-    margin-top: 5px;
+    margin-top: 10px;
     width: 200px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
+.aboutUserInfo p{
+    word-wrap: break-word;
+    max-width: fit-content;
+}
 .aboutUserInfo.active p{
     overflow: auto;
+
 }
 
 
