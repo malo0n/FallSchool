@@ -49,6 +49,8 @@
                                 <input class="name" type="text" maxlength="30" id="name" required autocomplete="off"
                                     required>
                                 <label for="name">Имя и фамилия</label>
+                                <p class="nameRequired">Обязательное поле</p>
+                                <p class="nameIncorrect">Неверный формат ввода</p>
                             </div>
                             <div class="gender_box">
                                 <div class="male">
@@ -64,20 +66,25 @@
                         <div class="date" style="margin-top: 5px;">
                             <input class="date" type="date" id="date" required autocomplete="off">
                             <label for="date">Дата рождения</label>
+                            <p class="dateRequired">Обязательное поле</p>
                         </div>
                         <div class="telegram">
                             <input class="telegram" type="text" id="telegram" required autocomplete="off">
                             <label for="telegram">Телеграм</label>
+                            <p class="telegramRequired">Обязательное поле</p>
+                            <p class="telegramIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="telnum">
-                            <input class="phone" type="phone" id="phone" pattern="" required maxlength="11" autocomplete="off">
+                            <input class="phone" type="text" id="phone" required maxlength="11" autocomplete="off">
                             <label for="phone">Номер телефона</label>
+                            <p class="phoneRequired">Обязательное поле</p>
+                            <p class="phoneIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="about__me">
                             <textarea name="Me" id="about_me" cols="30" rows="10" class="info" autocomplete="off" required></textarea>
                             <label for="about_me">О себе</label>
-                            <p
-                                style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">
+                            <p class="aboutMeRequired">Обязательное поле</p>
+                            <p class="exampleText" style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">
                                 Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень
                                 люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :) </p>
                         </div>

@@ -7,9 +7,6 @@
     padding: 0;
     scroll-behavior: smooth;
     letter-spacing: 0.8px;
-}
-
-:focus :active :hover {
     outline: 0;
     outline-offset: 0;
 }
@@ -67,9 +64,7 @@ button:hover  {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 64px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 64px 20px;
     width: 100%;
     margin: 0 auto;
 }
@@ -207,17 +202,20 @@ input {
     flex-direction: column;
     position: relative;
 }
-
+.about__container p:not(.exampleText){
+    margin-top: 2px;
+    color : red;
+    display: none;
+    justify-content: end;
+}
 .about__container input {
     height: 56px;
     position: relative;
     border: none;
     width: 100%;
     position: relative;
-    height: 56px;
     padding: 8px 10px;
     border-radius: 8px;
-    text-size-adjust: 16px;
     font-size: 16px;
 
 }
@@ -226,7 +224,6 @@ input {
     outline: 0;
     outline-offset: 0;
 }
-
 .gender_box {
     display: flex;
     margin-top: 10px;
@@ -314,8 +311,6 @@ input[type="date"]::-webkit-clear-button {
     z-index: 1;
 }
 
-
-
 textarea {
     position: relative;
     overflow: auto;
@@ -327,13 +322,11 @@ textarea {
     padding: 8px 0 8px 10px;
     font-size: 16px;
 }
-
 .about__me {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .about__me textarea:valid~label,
 .about__me textarea:focus~label {
     color: rgb(93, 91, 102);
