@@ -168,19 +168,29 @@ input {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    height: 200px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
     padding: 42px 18px;
     border: 1px #CDBDDB dashed;
     border-radius: 16px;
     gap: 15px;
+    background-image: none;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.userAvatar{
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+    display: none;
+    border-radius: 16px;
 }
 
 .avatar__button {
     background-color: #7953C3;
     color: #FFF;
     border: 0.8px solid;
-    padding: 8px 40px;
     border-radius: 8px;
     transition: 0.25s;
     line-height: 20px;
@@ -350,7 +360,7 @@ textarea {
 }
 .preview {
     width: auto;
-    height: auto;
+    height:auto;
     border-radius: 32px;
     display: flex;
     justify-content: space-around;
@@ -361,7 +371,10 @@ textarea {
     margin-bottom: 24px;
     padding: 20px;
 }
-
+.info_preview{
+    display: flex;
+    flex-direction: column;
+}
 .avatar__preview {
     display: flex;
     flex-direction: column;
@@ -373,6 +386,10 @@ textarea {
     height: 140px;
     border: 1px #CDBDDB dashed;
     border-radius: 16px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .contacts__button {
@@ -395,8 +412,8 @@ textarea {
 .preview_sex{
     background-color: #f4f4f6;
     border-radius: 6px;
-    height: 2.5vh;
-    width: 10vh;
+    height:11px;
+    width: 32px;
 
 }
 .point{
@@ -409,29 +426,29 @@ textarea {
 .preview_age{
     background-color: #f4f4f6;
     border-radius: 6px;
-    height: 2.5vh;
-    width: 10vh;
+    height:11px;
+    width: 32px;
 }
 .preview_univresity{
     border-radius: 8px;
-    height: 2.5vh; 
     background-color: #f4f4f6; 
-    width: 40vh;
+    height:11px;
+    width:150px; 
 }
 .preview_job{
     border-radius: 8px;
-    height: 3.2vh; 
+    height: 16px; 
     background-color: #f4f4f6; 
     margin-top: 10px;
-    width: 40vh;
+    width: 40%;
     padding: 3px 6px;
 }
 .userInfoContainerPreview{
     background-color: #f4f4f6;
     border-radius: 6px;
     margin-top: 10px;
-    width: 70vh;
-    height: 2.5vh;
+    width: 100%;
+    height: 11px;
 }
 .userInfoContainer{
     display: none;
@@ -439,7 +456,6 @@ textarea {
 }
 .accordion{
     background-color:#fff;
-    transition: 0.2s;
     display: none;
     font-size: 9px;
     justify-content: center;

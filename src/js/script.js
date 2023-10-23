@@ -30,23 +30,40 @@ ageInput.addEventListener('change', () => {
 
 //'развернуть' информацию пользователя "О себе"
 let userInfo = document.querySelector('.about__me textarea');
-let showMore = document.querySelector('.accordion');
+let showMore = document.querySelector('.userInfoContainer img');
 let infoBox = document.querySelector('.aboutUserInfo');
 let infoText = document.querySelector('.aboutUserInfo p');
-let infoBoxPreview = 
 userInfo.addEventListener('change', () => {
     infoText.innerHTML = userInfo.value;
     document.querySelector('.userInfoContainerPreview').style.display = 'none';
     document.querySelector('.userInfoContainer').style.display = "flex";
     infoBox.style.cssText ='color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; max-width:100%; word-wrap: break-word;';
-    if (infoText.offsetWidth >= 200) showMore.style.display = "flex";
-    else showMore.style.display = 'none';
+    infoText.offsetWidth >= 200 ? showMore.style.display = "flex" : showMore.style.display = 'none';
 })
 showMore.addEventListener("click", () => {
-    infoBox.classList.toggle('active');
-    if (showMore.src = "img/svg/show_more.svg") showMore.src = "img/svg/show_less.svg";
-    else showMore.src = "img/svg/show_more.svg";
+        infoBox.classList.toggle('active');
+        showMore.src = (showMore.src.includes("show_more.svg"))? "/src/img/svg/show_less.svg" : "/src/img/svg/show_more.svg";
 });
+
+//загрузка аватара
+let inputAvatar = document.querySelector('.inputAvatar');
+let userAvatar = document.querySelector('.userAvatar');
+let userAvatarPreview = document.querySelector('.picture');
+inputAvatar.addEventListener('change', function(){
+    userAvatar.src = URL.createObjectURL(inputAvatar.files[0]);
+    userAvatar.style.display = "block";
+    document.querySelector('.avatar').style.display = "none";
+    userAvatarPreview.style.backgroundImage = `url(${userAvatar.src})`;
+    userAvatarPreview.style.border = "none";
+});
+
+
+//Блок с валидацией полей
+
+
+
+
+
 
   
   
