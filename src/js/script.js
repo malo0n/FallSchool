@@ -1,3 +1,4 @@
+
 //вывод имени в превью
 let userName = document.querySelector('.name_preview');
 let nameInput = document.querySelector('.name');
@@ -6,6 +7,7 @@ nameInput.addEventListener('change', () => {
 })
 
 //вывод пола в превью
+
 let userSex = document.querySelector('.preview_sex');
 let radioInput = document.querySelectorAll('.custom-radio');
 radioInput.forEach(element => {
@@ -17,11 +19,11 @@ radioInput.forEach(element => {
 })})
 
 //вывод возраста в превью
+
 let userAge = document.querySelector('.preview_age');
 let ageInput = document.querySelector('.date input');
-//функция вычисления возраста
 function get_current_age(date) {
-    return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000));
+    return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)); //функция вычисления возраста
 }
 ageInput.addEventListener('change', () => {
     userAge.innerHTML = (Math.floor(get_current_age(ageInput.value))) + ' лет';
@@ -29,6 +31,7 @@ ageInput.addEventListener('change', () => {
 })
 
 //'развернуть' информацию пользователя "О себе"
+
 let userInfo = document.querySelector('.about__me textarea');
 let showMore = document.querySelector('.userInfoContainer img');
 let infoBox = document.querySelector('.aboutUserInfo');
@@ -46,6 +49,7 @@ showMore.addEventListener("click", () => {
 });
 
 //загрузка аватара
+
 let inputAvatar = document.querySelector('.inputAvatar');
 let userAvatar = document.querySelector('.userAvatar');
 let userAvatarPreview = document.querySelector('.picture');
@@ -56,7 +60,6 @@ inputAvatar.addEventListener('change', function(){
     userAvatarPreview.style.backgroundImage = `url(${userAvatar.src})`;
     userAvatarPreview.style.border = "none";
 });
-
 
 //Блок с валидацией полей
 
@@ -91,6 +94,7 @@ nameInput.addEventListener('change', () =>{ //nameInput уже объявлен 
     let username = nameInput.value;         //остальные input'ы будут объявлены через const
     if(!isValidName(username)) invalidNameInputStyle(nameInput);
     else validNameInputStyle(nameInput);
+    window.localStorage.setItem(username);
 })
 nameInput.addEventListener('blur', () =>{
     if(!nameInput.value) invalidNameInputStyle(nameInput);
@@ -134,7 +138,7 @@ function invalidTelegramInputStyle (input){
     input.style.border = "1px solid red";
     input.style.background = "rgba(255, 0, 0, 0.05)";
     document.querySelector('.telegram label').style.color = "red";
-    if(input.value == ""){
+    if(!input.value){
         telegramRequired.style.display = "flex";
         telegramIncorrect.style.display = "none";
     }
@@ -150,7 +154,6 @@ function validTelegramInputStyle (input){
     telegramRequired.style.display = "none";
     telegramIncorrect.style.display = "none";
 }
-
 telegramInput.addEventListener('change', () =>{
     let telegram = telegramInput.value;
     if(!isValidTelegram(telegram)) invalidTelegramInputStyle(telegramInput);
@@ -159,8 +162,6 @@ telegramInput.addEventListener('change', () =>{
 telegramInput.addEventListener('blur', () =>{
     if(!telegramInput.value) invalidTelegramInputStyle(telegramInput);
 })
-
-
 
 //валидация номера телефона
 
@@ -191,7 +192,6 @@ function validPhoneInputStyle (input){
     phoneRequired.style.display = "none";
     phoneIncorrect.style.display = "none";
 }
-
 phoneInput.addEventListener('change', () =>{
     let phone = phoneInput.value;
     if(!isValidPhone(phone)) invalidPhoneInputStyle(phoneInput);
@@ -202,6 +202,7 @@ phoneInput.addEventListener('blur', () =>{
 })
 
 //валидация поля "О себе"
+
 const aboutUserInput = document.querySelector('.about__me textarea');
 let aboutMeRequired = document.querySelector('.aboutMeRequired');
 function invalidAboutUserInputStyle (input){
