@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Homeet</title>
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
+
 <body>
 
     <header class="header">
@@ -19,13 +22,13 @@
         <div class="profile_container">
             <div class="profile-create">
                 <div><button class="to-main">На главную</button></div>
-                    <div class="profile_header_content">
-                        <div class="profile_header_element_1">
-                            <h3 class="create-text">Создание профиля</h3>
-                        </div>
-                        <div class="profile_header_element_2">
-                            <p class="slash">/</p>
-                            <p class="education">Образование</p>
+                <div class="profile_header_content">
+                    <div class="profile_header_element_1">
+                        <h3 class="create-text">Создание профиля</h3>
+                    </div>
+                    <div class="profile_header_element_2">
+                        <p class="slash">/</p>
+                        <p class="education">Образование</p>
                     </div>
                 </div>
                 <div class="progbar">
@@ -34,94 +37,147 @@
             </div>
             <div class="main__information">
                 <div class="first_main_block">
-                    <form class="about__container">
-                        
-                        <div class="gender_box">
-                            <div class="student">
-                                <input class="custom-radio" type="radio" name="gender" id="student" style="cursor: pointer;" required>
-                                <label  for="student">Студент / выпускник</label>
+                    <div class="about__container">
+                        <div>
+                            <div class="radioClass">
+                                <div class="student">
+                                    <input class="custom-radio" name="name" type="radio" id="student" value="student" required>
+                                    <label class="label" for="student">Студент / выпускник</label>
+                                </div>
+                                <div class="worker">
+                                    <input class="custom-radio" name="name" type="radio" id="worker" value="worker" required>
+                                    <label class="label" for="worker">Сотрудник</label>
+                                </div>
                             </div>
-                            <div class="worker">
-                                <input class="custom-radio" type="radio"  name="gender" id = "worker" style="cursor: pointer;" required>
-                                <label  for="worker">Сотрудник</label>
-                            </div>
-                        </div>
+                            <div class="studentContainer">
+                                <div class="courseContainer">
+                                    <p class="label">Курс</p>
+                                    <div class="courseUser">
+                                        <input type="radio" id="radio1" class="radio" name="radio" value="1 курс"><label class="label" for="radio1">1</label>
+                                        <input type="radio" id="radio2" class="radio" name="radio" value="2 курс"><label class="label" for="radio2">2</label>
+                                        <input type="radio" id="radio3" class="radio" name="radio" value="3 курс"><label class="label" for="radio3">3</label>
+                                        <input type="radio" id="radio4" class="radio" name="radio" value="4 курс"><label class="label" for="radio4">4</label>
+                                        <input type="radio" id="radio5" class="radio" name="radio" value="5 курс"><label class="label" for="radio5">5</label>
+                                        <input type="radio" id="radio6" class="radio" name="radio" value="6 курс"><label class="label" for="radio6">6</label>
+                                    </div>
+                                    <div class="UserGraduate">
+                                        <input type="radio" id="radio7" class="radio" name="radio" value="выпускник">
+                                        <label class="label" for="radio7">Уже окончил Вышку</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <p class="label">Ступень образования</p>
+                                    <div class="select">
+                                        <span class="selected">Ступень образования</span>
+                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>Бакалавриат</li>
+                                        <li>Магистратура</li>
+                                    </ul>
+                                    <p class="requiredDegree">Обязательное поле</p>
+                                </div>
 
-                        <div class="input__name" style="display: flex; flex-direction: column; gap:8px">
-                            <p style="color:#5d5b66">Курс</p>
-                            <div class="grade_bar" style="display: flex; background-color:#f4f4f6; border-radius:16px; justify-content: space-between;">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                                <div>4</div>
-                                <div>5</div>
-                                <div>6</div>
+                                <div class="dropdown">
+                                    <p class="label">Факультет</p>
+                                    <div class="select">
+                                        <span class="selected">Факультет</span>
+                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>Высшая школа бизнеса</li>
+                                        <li>Факультет гуманитарных наук</li>
+                                        <li>Факультет компьютерных наук</li>
+                                        <li>Московский интститут электроники и математики им. А.Н. Тихонова</li>
+                                        <li>Факультет экономических наук</li>
+                                    </ul>
+                                    <p class="requiredFaculty">Обязательное поле</p>
+                                </div>
+
+                                <div class="dropdown">
+                                    <p class="label">Образовательная программа</p>
+                                    <div class="select">
+                                        <span class="selected">Образовательная программа</span>
+                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>ПМИ</li>
+                                        <li>ИБ</li>
+                                        <li>ЭАД</li>
+                                        <li>БИ</li>
+                                        <li>ФКЛ</li>
+                                    </ul>
+                                    <p class="requiredCourse">Обязательное поле</p>
+                                </div>
+                                <div class="studentJob">
+                                    <input type="text" id="studentJob">
+                                    <label for="studentJob">Работа</label>
+                                </div>
                             </div>
-                            <div>
-                                <label><input type="checkbox" style="margin-right: 5px; height: 16px; width: 16px; border: 1px solid #7953C3">Уже окончил Вышку</label>
+                            <div class="workerContainer">
+                                <div class="userJobContainer">
+                                    <input type="text" class="job" id="job" value="" required>
+                                    <label for="job">Кем вы работаете?</label>
+                                    <p class="requiredJob">Обязательное поле</p>
+                                </div>
+                                <div class="userJobTime">
+                                    <p>Год начала работы</p>
+                                    <input type="date" class="jobTime" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="date" style="margin-top: 5px;">
-                            <p style="color:#5d5b66">Ступень образования</p>
-                            <div class="select_bar" style="padding: 16px; height: 60px; background-color: #f4f4f6; border-radius: 8px; display: flex; justify-content: space-between; align-items:center">
-                                <p style="color: rgb(51, 51, 51)">Бакалавриат</p>
-                                <img src="img/svg/arrow.svg" alt="nope">
-                            </div>
-                        </div>
-                        <div class="telegram">
-                            <p style="color:#5d5b66">Факультет</p>
-                            <div class="select_bar" style="padding: 16px; height: 60px; background-color: #f4f4f6; border-radius: 8px; display: flex; justify-content: space-between; align-items:center">
-                                <p style="color: rgb(51, 51, 51)">Высшая школа бизнеса  </p>
-                                <img src="img/svg/arrow.svg" alt="nope">
-                            </div>
-                        </div>
-                        <div class="telnum">
-                            <p style="color:#5d5b66">Образовательная программа</p>
-                            <div class="select_bar" style="padding: 16px; height: 60px; background-color: #f4f4f6; border-radius: 8px; display: flex; justify-content: space-between; align-items:center">
-                                <p style="color: rgb(51, 51, 51)">Экономиечский анализ</p>
-                                <img src="img/svg/arrow.svg" alt="nope">
-                            </div>
-                        </div>
-                        <div class="about__me">
-                            <p style="color:#5d5b66">Работа</p>
-                            <div style="padding: 16px;height: 60px; background-color: #f4f4f6; border-radius:8px">
-                                <input type="text" style="height: 100%; width: 100%;">
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="second_main_block">
                     <div class="preview__container">
-                        <p style="color: #5d5b66; font-weight: 400; margin-bottom: 16px; padding-left: 16px;">Так будет выглядеть твоя будущая страница</p>
-                        <div class="preview">
-                            <div class="avatar__preview">
-                                <div class="picture"></div>
-                                <button class="contacts__button">Показать контакты</button>
-                            </div>
-                            <div class="info_preview">
-                                <p class="Name" id="name" style="font-size: 16px; font-weight: 600;">Лысенков Григорий</p>
-                                <div style="display: flex;align-items: center; margin-top: 7px; gap: 4px;">
-                                    <div><p>Парень</p></div>
-                                    <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
-                                    <div ><p>18 лет</p></div>
-                                    <div style="height: 4px; width: 4px;background-color: #7953c3; opacity: .3; border-radius: 100px;"></div>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 11px;width: 160px"></div>
+                        <p style="color: #5d5b66; font-weight: 400; margin-bottom: 16px; padding-left: 16px;">Так будет
+                            выглядеть твоя будущая страница</p>
+                            <div class="preview">
+                                <div class="avatar__preview">
+                                    <div class="picture"></div>
+                                    <button class="contacts__button">Показать контакты</button>
                                 </div>
-                                <div style="border-radius: 8px;height: 17px; background-color: #f4f4f6; margin-top: 10px;width: 90px;padding: 3px 6px;"></div>
-                                <div style="margin-top: 20px;"><p style="color: #5d5b66;">Мне очень нравится устривать вечеринки, дебоширить, ломать мебель и вообще.</p></div>
-                                <div class="preferences">
-                                    <p style="font-size: 9px; font-weight: 400; color: #5d5b66; letter-spacing: 0px;">Предпочтения по жилью</p>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 20px;width: 200px; margin-top: 4px;"></div>
-                                    <div style="background-color: #f4f4f6;border-radius: 6px;height: 15px;width: 280px; margin-top: 4px;"></div>
-                                    <div class="preferences_bar"></div>
+                                <div class="info_preview">
+                                    <p class="name_preview" style="font-size: 16px; font-weight: 600;">Имя и фамилия</p>
+                                    <div style="display: flex;align-items: center; margin-top: 7px; gap: 4px;">
+                                        <div class="preview_sex">
+                                            <p></p>
+                                        </div>
+                                        <div class="point">
+                                        </div>
+                                        <div class="preview_age">
+                                        </div>
+                                        <div class="point">
+                                        </div>
+                                        <div class="preview_univresity">
+                                            <p class="course"></p>
+                                            <p class="degree"></p>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="preview_job"></div>
+                                    <div class="userInfoContainer">
+                                        <div class="aboutUserInfo"><p></p></div>
+                                        <img class="accordion" src="/src/img/svg/show_more.svg" alt=""></img>
+                                    </div>
+                                    <div class="preferences">
+                                        <p style="font-size: 9px; font-weight: 400; color: #5d5b66; letter-spacing: 0px;">Предпочтения по жилью</p>
+                                        <div
+                                            style="background-color: #f4f4f6;border-radius: 6px;height: 20px;width: 200px; margin-top: 4px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #f4f4f6;border-radius: 6px;height: 15px;width: 280px; margin-top: 4px;">
+                                        </div>
+                                        <div class="preferences_bar"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div class="tell__about">
                             <div class="tell__container">
                                 <div class="tell__text">
                                     <p style="font-size: 16px; font-weight: 600;">Расскажи где ты учишься</p>
-                                    <p style="font-size: 15px; color: #5D5B66;  font-weight: 400;">Часто студенты ищут соседей по схожим интересам</p>
+                                    <p style="font-size: 15px; color: #5D5B66;  font-weight: 400;">Часто студенты ищут
+                                        соседей по схожим интересам</p>
                                 </div>
                                 <div class="emoji"><img src="img/svg/emoji2.svg" alt="insmile face"></div>
                             </div>
@@ -153,13 +209,15 @@
                     <div style="display: flex; gap: 8px;">
                         <div class="tg"></div>
                         <div class="vk"></div>
-                        </div>    
                     </div>
                 </div>
+            </div>
             <div style="border: 1px solid #7953c3;opacity: 0.2 ;width: 100%"></div>
             <div style="display: flex;">
                 <div style="width: 100%;">
-                    <p style="font-size: 16px; font-weight: 400; color: #5D5B66;">Предложение не является публичной офертой<br>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+                    <p style="font-size: 16px; font-weight: 400; color: #5D5B66;">Предложение не является публичной
+                        офертой<br>Сервис не несет ответственности за действия пользователей, достоверность информации и
+                        т.д.</p>
                 </div>
                 <div style="display: flex; align-items:end">
                     <p style="font-size: 16px; font-weight: 400; color: #5D5B66;width:max-content;">Сделано в бвср</p>
@@ -167,6 +225,11 @@
             </div>
         </div>
     </footer>
-
+    <script src="js/script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr(".userJobTime input");
+    </script>
 </body>
+
 </html>

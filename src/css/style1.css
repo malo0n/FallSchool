@@ -202,7 +202,7 @@ input {
     flex-direction: column;
     position: relative;
 }
-.about__container p:not(.exampleText){
+.about__container p:not(.exampleText):not(.dateText){
     margin-top: 2px;
     color : red;
     display: none;
@@ -294,6 +294,7 @@ input[type="date"] {
     position: relative;
 }
 
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     top: 0;
@@ -310,7 +311,9 @@ input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-clear-button {
     z-index: 1;
 }
-
+.dateText{
+    color: #5D5B66;
+}
 textarea {
     position: relative;
     overflow: auto;

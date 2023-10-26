@@ -4,6 +4,7 @@ let userName = document.querySelector('.name_preview');
 let nameInput = document.querySelector('.name');
 nameInput.addEventListener('change', () => {
     userName.innerHTML = nameInput.value;
+    window.localStorage.setItem('name', nameInput.value);
 })
 
 //вывод пола в превью
@@ -14,9 +15,10 @@ radioInput.forEach(element => {
     addEventListener('change', () => {
         if (element.checked) {
             userSex.innerHTML = element.value;
-            userSex.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
+            userSex.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto';
+            window.localStorage.setItem('gender', element.value);
         }
-})})
+})});
 
 //вывод возраста в превью
 
@@ -28,7 +30,22 @@ function get_current_age(date) {
 ageInput.addEventListener('change', () => {
     userAge.innerHTML = (Math.floor(get_current_age(ageInput.value))) + ' лет';
     userAge.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto;';
-})
+    window.localStorage.setItem('age', userAge.innerHTML);
+});
+
+//загрузка аватара (основная инфа + превью)
+
+let inputAvatar = document.querySelector('.inputAvatar');
+let userAvatar = document.querySelector('.userAvatar');
+let userAvatarPreview = document.querySelector('.picture');
+inputAvatar.addEventListener('change', function(){
+    userAvatar.src = URL.createObjectURL(inputAvatar.files[0]);
+    userAvatar.style.display = "block";
+    document.querySelector('.avatar').style.display = "none";
+    userAvatarPreview.style.backgroundImage = `url(${userAvatar.src})`;
+    userAvatarPreview.style.border = "none";
+    window.localStorage.setItem('avatar', userAvatar.src);
+});
 
 //'развернуть' информацию пользователя "О себе"
 
@@ -42,23 +59,11 @@ userInfo.addEventListener('change', () => {
     document.querySelector('.userInfoContainer').style.display = "flex";
     infoBox.style.cssText ='color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; max-width:100%; word-wrap: break-word;';
     infoText.offsetWidth >= 200 ? showMore.style.display = "flex" : showMore.style.display = 'none';
-})
+    window.localStorage.setItem('userInfo', userInfo.value);
+});
 showMore.addEventListener("click", () => {
         infoBox.classList.toggle('active');
         showMore.src = (showMore.src.includes("show_more.svg"))? "/src/img/svg/show_less.svg" : "/src/img/svg/show_more.svg";
-});
-
-//загрузка аватара
-
-let inputAvatar = document.querySelector('.inputAvatar');
-let userAvatar = document.querySelector('.userAvatar');
-let userAvatarPreview = document.querySelector('.picture');
-inputAvatar.addEventListener('change', function(){
-    userAvatar.src = URL.createObjectURL(inputAvatar.files[0]);
-    userAvatar.style.display = "block";
-    document.querySelector('.avatar').style.display = "none";
-    userAvatarPreview.style.backgroundImage = `url(${userAvatar.src})`;
-    userAvatarPreview.style.border = "none";
 });
 
 //Блок с валидацией полей
@@ -94,7 +99,6 @@ nameInput.addEventListener('change', () =>{ //nameInput уже объявлен 
     let username = nameInput.value;         //остальные input'ы будут объявлены через const
     if(!isValidName(username)) invalidNameInputStyle(nameInput);
     else validNameInputStyle(nameInput);
-    window.localStorage.setItem(username);
 })
 nameInput.addEventListener('blur', () =>{
     if(!nameInput.value) invalidNameInputStyle(nameInput);
@@ -107,13 +111,13 @@ let dateRequired = document.querySelector('.dateRequired');
 function invalidDateInputStyle (input){
     input.style.border = "1px solid red";
     input.style.background = "rgba(255, 0, 0, 0.05)";
-    document.querySelector('.date label').style.color = "red";
+    document.querySelector('.dateText').style.color = "red";
     dateRequired.style.display = "flex";
 }
 function validDateInputStyle (input){
     input.style.border = "none";
     input.style.background = "#F4F4F6";
-    document.querySelector('.date label').style.color = "rgb(93, 91, 102)";
+    document.querySelector('.dateText').style.color = "rgb(93, 91, 102)";
     dateRequired.style.display = "none";
 }
 dateInput.addEventListener('change', () =>{ 
