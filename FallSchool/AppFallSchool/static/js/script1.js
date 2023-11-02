@@ -63,7 +63,7 @@ userInfo.addEventListener('change', () => {
 });
 showMore.addEventListener("click", () => {
         infoBox.classList.toggle('active');
-        showMore.src = (showMore.src.includes("show_more.svg"))? "/src/img/svg/show_less.svg" : "/src/img/svg/show_more.svg";
+        showMore.src = (showMore.src.includes("show_more.svg"))? "/static/img/svg/show_less.svg" : "/static/img/svg/show_more.svg";
 });
 
 //Блок с валидацией полей

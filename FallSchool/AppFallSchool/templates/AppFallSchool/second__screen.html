@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Homeet</title>
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
@@ -13,7 +14,7 @@
 
     <header class="header">
         <div class="main__header">
-            <img class="logo" src="img/svg/logo.svg" alt="logo">
+            <img class="logo" src="{% static 'img/svg/logo.svg' %}" alt="logo">
             <button class="sign__out">Выйти из аккаунта</button>
         </div>
     </header>
@@ -69,7 +70,7 @@
                                     <p class="label">Ступень образования</p>
                                     <div class="select">
                                         <span class="selected">Ступень образования</span>
-                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                        <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
                                     <ul class="menu">
                                         <li>Бакалавриат</li>
@@ -82,7 +83,7 @@
                                     <p class="label">Факультет</p>
                                     <div class="select">
                                         <span class="selected">Факультет</span>
-                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                        <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
                                     <ul class="menu">
                                         <li>Высшая школа бизнеса</li>
@@ -98,7 +99,7 @@
                                     <p class="label">Образовательная программа</p>
                                     <div class="select">
                                         <span class="selected">Образовательная программа</span>
-                                        <div class="caret"><img src="img/svg/caret.svg" alt="none"></div>
+                                        <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
                                     <ul class="menu">
                                         <li>ПМИ</li>
@@ -158,7 +159,7 @@
                                     <div class="preview_job"></div>
                                     <div class="userInfoContainer">
                                         <div class="aboutUserInfo"><p></p></div>
-                                        <img class="accordion" src="/src/img/svg/show_more.svg" alt=""></img>
+                                        <img class="accordion" src="{% static 'img/svg/show_more.svg' %}" alt=""></img>
                                     </div>
                                     <div class="preferences">
                                         <p style="font-size: 9px; font-weight: 400; color: #5d5b66; letter-spacing: 0px;">Предпочтения по жилью</p>
@@ -179,7 +180,7 @@
                                     <p style="font-size: 15px; color: #5D5B66;  font-weight: 400;">Часто студенты ищут
                                         соседей по схожим интересам</p>
                                 </div>
-                                <div class="emoji"><img src="img/svg/emoji2.svg" alt="insmile face"></div>
+                                <div class="emoji"><img src="{% static 'img/svg/emoji2.svg' %}" alt="insmile face"></div>
                             </div>
                         </div>
                     </div>
@@ -225,7 +226,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/script2.js"></script>
+    <script src="{% static 'js/script2.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         flatpickr(".userJobTime input");
