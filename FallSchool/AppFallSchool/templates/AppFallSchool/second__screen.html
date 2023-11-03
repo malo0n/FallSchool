@@ -1,4 +1,4 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -69,6 +69,7 @@
                                 <div class="dropdown">
                                     <p class="label">Ступень образования</p>
                                     <div class="select">
+                                        <input type="text" class="degree_input">
                                         <span class="selected">Ступень образования</span>
                                         <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
@@ -82,6 +83,7 @@
                                 <div class="dropdown">
                                     <p class="label">Факультет</p>
                                     <div class="select">
+                                        <input type="text" class="faculty_input" value="">
                                         <span class="selected">Факультет</span>
                                         <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
@@ -98,6 +100,7 @@
                                 <div class="dropdown">
                                     <p class="label">Образовательная программа</p>
                                     <div class="select">
+                                        <input type="text" class="course_input" value="">
                                         <span class="selected">Образовательная программа</span>
                                         <div class="caret"><img src="{% static 'img/svg/caret.svg' %}" alt="none"></div>
                                     </div>
@@ -151,9 +154,9 @@
                                         <div class="point">
                                         </div>
                                         <div class="preview_univresity">
-                                            <p class="course"></p>
                                             <p class="degree"></p>
-                                            
+                                            <p class="faculty"></p>
+                                            <p class="course"></p>
                                         </div>
                                     </div>
                                     <div class="preview_job"></div>

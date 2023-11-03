@@ -307,6 +307,9 @@ input{
 .dropdown *{
     box-sizing: border-box;
 }
+.dropdown input{
+    display: none;
+}
 .select{
     background: #F4F4F6;
     color:#A1A6B1;
@@ -542,7 +545,21 @@ input{
 
 }
 .degree{
-    width: 300px;
+    width: auto;
+    background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.faculty{
+    width: auto;
+    background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.course{
+    width: auto;
     background-color: #fff;
     overflow: hidden;
     text-overflow: ellipsis;

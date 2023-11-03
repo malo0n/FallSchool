@@ -39,7 +39,6 @@ window.onload = () => {
     document.querySelector('.preview_age').innerHTML = window.localStorage.getItem('age');
     document.querySelector('.aboutUserInfo p').innerHTML = window.localStorage.getItem('userInfo');
     infoText.offsetWidth >= 200 ? showMore.style.display = "flex" : showMore.style.display = 'none';
-    console.log(infoText.offsetWidth);
     infoBox.style.cssText ='color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; max-width:100%; word-wrap: break-word;';
 
 }
@@ -58,7 +57,6 @@ studentJob.addEventListener('change', () => {
 let workerJob = document.querySelector('.userJobContainer input');
 workerJob.addEventListener('change', () => {
     jobPreview.innerHTML = workerJob.value;
-    console.log(job)
     jobPreview.style.backgroundColor = "#fff";
 });
 
@@ -67,9 +65,16 @@ workerJob.addEventListener('change', () => {
 
 showMore.addEventListener("click", () => {
         infoBox.classList.toggle('active');
-        showMore.src = (showMore.src.includes("show_more.svg"))? "/src/img/svg/show_less.svg" : "/src/img/svg/show_more.svg";
+        showMore.src = (showMore.src.includes("show_more.svg"))? "/static/img/svg/show_less.svg" : "/static/img/svg/show_more.svg";
 });
 
+inputDegree = document.querySelector('.degree_input');
+inputFaculty = document.querySelector('.faculty_input');
+inputCourse = document.querySelector('.course_input');
+inputDegree.addEventListener('propertychange', () => {
+    document.querySelector('.degree').innerHTML = inputDegree.innerHTML;
+    console.log(5);
+});
 
 const dropdowns = document.querySelectorAll('.dropdown');
 dropdowns.forEach(p => {
@@ -82,6 +87,7 @@ dropdowns.forEach(dropdown =>{
     const menu = dropdown.querySelector('.menu');
     const options = dropdown.querySelectorAll('.menu li');
     const selected = dropdown.querySelector('.selected');
+    const input = dropdown.querySelector('input');
     select.addEventListener('click', () =>{
         select.classList.toggle('select-clicked');
         caret.classList.toggle('caret-rotate');
@@ -91,7 +97,7 @@ dropdowns.forEach(dropdown =>{
     options.forEach(option =>{
         option.addEventListener('click', () =>{
             selected.innerHTML = option.innerText;
-            degree.innerHTML += `${option.innerText} `  ;
+            input.innerHTML = selected.innerHTML;
             selected.style.color = "#040013";
             select.classList.remove('selected-clicked');
             caret.classList.remove('caret-rotate');
@@ -102,7 +108,7 @@ dropdowns.forEach(dropdown =>{
             option.classList.add('active');
         });
     });
-})
+});
 
 
 
