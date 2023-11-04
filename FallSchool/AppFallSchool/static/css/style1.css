@@ -19,7 +19,6 @@
 :root {
     --index: calc(1vw + 1vh);
 }
-
 .main__header {
 
     box-shadow: 10px 5px 19px 1px #ebebeb;
@@ -158,43 +157,7 @@ input {
     background-color: #F4F4F6;
 }
 
-.avatar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 42px 18px;
-    border: 1px #CDBDDB dashed;
-    border-radius: 16px;
-    gap: 15px;
-    background-image: none;
-    background-position: center;
-    background-size:cover;
-    background-repeat: no-repeat;
-}
-.userAvatar{
-    height: 200px;
-    object-fit: cover;
-    width: 200px;
-    display: none;
-    border-radius: 16px;
-}
 
-.avatar__button {
-    background-color: #7953C3;
-    color: #FFF;
-    border: 0.8px solid;
-    border-radius: 8px;
-    transition: 0.25s;
-    line-height: 20px;
-}
-
-.avatar__button:hover {
-    background-color: #FFF;
-    color: #7953C3;
-}
 
 .about__container {
     display: flex;
@@ -202,13 +165,13 @@ input {
     flex-direction: column;
     position: relative;
 }
-.about__container p:not(.exampleText):not(.dateText){
+.about__container p:not(.exampleText):not(.dateText):not(.avatar__p){
     margin-top: 2px;
     color : red;
     display: none;
     justify-content: end;
 }
-.about__container input {
+.about__container input:not(.inputAvatar):not(.custom-radio) {
     height: 56px;
     position: relative;
     border: none;
@@ -223,6 +186,45 @@ input {
 .about__container input:focus {
     outline: 0;
     outline-offset: 0;
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 42px 18px;
+    border: 1px #CDBDDB dashed;
+    border-radius: 16px;
+    gap: 30px;
+    background-image: none;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.userAvatar{
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+    display: none;
+    border-radius: 16px;
+}
+.inputAvatar{
+    display: none;
+}
+.avatar__button {
+    background-color: #7953C3;
+    color: #FFF;
+    border: 0.8px solid;
+    border-radius: 8px;
+    transition: 0.25s;
+    line-height: 20px;
+}
+
+.avatar__button:hover {
+    background-color: #FFF;
+    color: #7953C3;
 }
 .gender_box {
     display: flex;
@@ -266,7 +268,7 @@ input {
     background-image: url("../img/svg/gender_radio.svg");
 }
 
-.about__container label:not(.gender) {
+.about__container label:not(.gender):not(.download_avatar) {
     color: rgb(161, 166, 177);
     position: absolute;
     left: 0;
@@ -276,8 +278,8 @@ input {
     letter-spacing: 0.05em;
 }
 
-.about__container input:valid~label:not(.gender),
-.about__container input:focus~label:not(.gender) {
+.about__container input:valid~label:not(.gender):not(.download_avatar),
+.about__container input:focus~label:not(.gender):not(.download_avatar) {
     color: rgb(93, 91, 102);
     font-size: 1em;
     transform: translateY(-41px) translateX(-10px);

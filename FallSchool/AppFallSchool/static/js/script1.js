@@ -1,5 +1,5 @@
 
-//вывод имени в превью
+// вывод имени в превью
 let userName = document.querySelector('.name_preview');
 let nameInput = document.querySelector('.name');
 nameInput.addEventListener('change', () => {
@@ -200,10 +200,10 @@ phoneInput.addEventListener('change', () =>{
     let phone = phoneInput.value;
     if(!isValidPhone(phone)) invalidPhoneInputStyle(phoneInput);
     else validPhoneInputStyle(phoneInput);
-})
+});
 phoneInput.addEventListener('blur', () =>{
     if(!phoneInput.value) invalidPhoneInputStyle(phoneInput);
-})
+});
 
 //валидация поля "О себе"
 
@@ -229,8 +229,17 @@ function validAboutUserInputStyle (input){
 aboutUserInput.addEventListener('blur', () =>{
     if(!aboutUserInput.value) invalidAboutUserInputStyle(aboutUserInput);
     else validAboutUserInputStyle(aboutUserInput);
-})
+});
 
+
+//валидация всех полей(кнопкой Продолжить)
+submitButton = document.querySelector('.next_page');
+inputs = document.querySelectorAll('input');
+submitButton.addEventListener('click', () =>{
+    inputs.forEach(element => {
+        if (!element) element 
+    })
+});
 
 
 
