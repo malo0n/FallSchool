@@ -56,37 +56,34 @@
                             </div>
                             <div class="gender_box">
                                 <div class="male">
-                                    <input class="custom-radio" type="radio" name="gender" id="male"
-                                        style="cursor: pointer;" value="Парень" required>
-                                    <label class="gender" for="male">Парень</label>
+                                    {{form.gender}}
+                                    <label class="gender" for="gender_0">Парень</label>
                                 </div>
                                 <div class="female">
-                                    <input class="custom-radio" type="radio" name="gender" id="female"
-                                        style="cursor: pointer;" value="Девушка" required>
-                                    <label class="gender" for="female">Девушка</label>
+                                    {{form.gender}}
+                                    <label class="gender" for="gender_1">Девушка</label>
                                 </div>
                             </div>
                         </div>
                         <div class="date" style="margin-top: 5px;">
                             <p class="dateText">Дата рождения</p>
-                            <input class="date" type="date" id="date" required autocomplete="off">
+                            {{form.date_of_birth}}
                             <p class="dateRequired">Обязательное поле</p>
                         </div>
                         <div class="telegram">
-                            <input class="telegram" type="text" id="telegram" required autocomplete="off">
+                            {{form.telegram}}
                             <label for="telegram">Телеграм</label>
                             <p class="telegramRequired">Обязательное поле</p>
                             <p class="telegramIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="telnum">
-                            <input class="phone" type="text" id="phone" required maxlength="11" autocomplete="off">
+                            {{form.phone_number}}
                             <label for="phone">Номер телефона</label>
                             <p class="phoneRequired">Обязательное поле</p>
                             <p class="phoneIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="about__me">
-                            <textarea name="Me" id="about_me" cols="30" rows="10" class="info" autocomplete="off"
-                                required></textarea>
+                            {{form.description}}
                             <label for="about_me">О себе</label>
                             <p class="aboutMeRequired">Обязательное поле</p>
                             <p class="exampleText"
