@@ -1,12 +1,17 @@
 from django import forms
-from .models import *
+# from .models import *
+from django.contrib.auth import get_user_model
+
+
 GENDERS = [('Парень','Парень'),('Девушка','Девушка')]
 class UserInfo(forms.ModelForm):
+    
     gender = forms.ChoiceField(
         widget = forms.RadioSelect(attrs={'class': 'custom-radio', 'id': 'gender'}),
         choices=GENDERS,
     )
     class Meta:
+        User = get_user_model()
         model = User
         fields = '__all__'
         widgets = {
