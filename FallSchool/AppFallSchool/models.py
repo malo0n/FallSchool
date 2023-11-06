@@ -29,6 +29,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     telegram = models.CharField(max_length=50, unique = True)
     phone_number = models.CharField(max_length=11, unique = True, null=True)
     description = models.TextField(null=True)
+    
     is_superuser = models.BooleanField(default=False)
     
     grade = models.CharField(max_length=10, null=True)

@@ -38,7 +38,7 @@
             </div>
             <div class="main__information">
                 <div class="first_main_block">
-                    <form action="/AppFallSchool/first__screen/" method="post" id="about__container" class="about__container">
+                    <form action="/AppFallSchool/first__screen/" enctype="multipart/form-data" method="post" name="about__container" id="about__container" class="about__container">
                         {% csrf_token %}
                         <div class="avatar">
                             <p class="avatar__p" style="font-weight: 600; font-size: 16px;">Аватар профиля</p>
@@ -91,9 +91,9 @@
                                 Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень
                                 люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :) </p>
                         </div>
-                        <div class="next_button">
+                        <!-- <div class="next_button">
                             <button type="submit" name="submit" class="next_page" form="about__container">Продолжить</button>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
                 <div class="second_main_block">
