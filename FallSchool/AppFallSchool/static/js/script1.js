@@ -237,12 +237,23 @@ aboutUserInput.addEventListener('blur', () =>{
 //валидация всех полей(кнопкой Продолжить)
 submitButton = document.querySelector('.next_page');
 inputs = document.querySelectorAll('input');
-submitButton.addEventListener('click', () =>{
-    inputs.forEach(element => {
-        if (!element) element 
-    })
-});
+submitButton.addEventListener('click', postData());
 
+
+function postData(){
+    const formData = new FormData(document.querySelector('.about__container'));
+    fetch('/AppFallSchool/api/items/', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        alert('User saved successfuly!');
+        document.querySelector('.about__container').requestFullscreen();
+        fetchItems();
+    })
+}
 
 
 

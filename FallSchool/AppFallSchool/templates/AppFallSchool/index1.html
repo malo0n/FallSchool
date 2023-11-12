@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stanis1.css' %}">
+</head>
+<body>
+    <main>
+        <header class="header">
+            <div class="nametitle">
+                <img class="logotitle" src="https://homeet.hse.ru/static/media/logo_main.b8cda893341cae4261fc65095645f799.svg" alt="logo">
+                <button class="buttonexit">Выйти из аккаунта </button>
+            </div>
+        </header>
+        <div class="registrationpage">
+            <section class="titlesection">
+                <div class="headertext">
+                    <button class="buttonmain">
+                        <p>На главную</p>
+                    </button>
+                    <div class="headertext2">
+                        <h3 class="h3">Создание профиля</h3>
+                        <div class="aboutu">
+                            <p class="class2">/</p>
+                            <p class="class2">О себе</p>
+                        </div>
+                    </div>
+                    <div class="progressbar">
+                        <div class="progressline"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="userinformation">
+                <div class="aboutuser">
+                    <form action='../src/index2.html' id="registrationform">
+                        {% csrf_token %}
+                        {{form}}
+                        <div class="img">
+                            <label for="input_img" class="input_img">
+                                <p class="text_img"> Аватар профиля</p>
+                                <div class="avatar_input_img" id="avatar">Загрузить</div>
+                                <p class="text_avatar_placeholder">Загрузите фотографию весом не более 10 мб</p>
+                            </label>
+                            {{form.photo}}
+                            <div id="come" class="none">
+                                <img src="#" alt id="bla" class="img-photo2">
+                            </div>
+                            <div id="come2">
+                                <img src="#" alt id="removeimg">
+                            </div>
+                        </div>
+                        <div class="input_name">
+                            {{form.name}}
+                            <label for="first_name" class="first_last_name"> Имя и Фамилия </label>
+                        </div>
+                        <div class="input_sex">
+                            <div class="sex">
+                                <div class="radio_input_button">
+                                    <input type="radio" name="gender" id="input_sex_male" class="input_sex1" value="MAN">
+                                    <label for="input_sex_male">Парень</label>
+                                </div>
+                                <div class="radio_input_button">
+                                    <input type="radio" name="gender" id="input_sex_female" class="input_sex1" value="WOMAN">
+                                    <label for="input_sex_female">Девушка</label>
+                                </div>
+                            </div>
+                            <div class="birthdate">
+                                <div class="datepicker-wrapper">
+                                    {{form.date}}
+                                    <label for="date" class="date"> Дата рождения</label>
+                                </div>
+                            </div>
+                            <div class="telegramform">
+                                {{form.telegram}}
+                                <label for="telegram" class="telegram">Телеграмм</label>
+                            </div>
+                            <div class="number">
+                                {{form.phone}}
+                                <label for="number" class="number_">Номер телефона</label>
+                            </div>
+                            <div class="information_about_user">
+                                <div class="about_user">
+                                    {{form.aboutuser}}
+                                    <label for="aboutme" class="aboutme">О себе</label>
+                                </div>
+                                <div class="example">
+                                    <p class="example_text">
+                                        Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <div class="profile_card">
+                        <p class="title_profile_card">
+                            Так будет выглядеть твоя будущая страница
+                        </p>
+                        <div class="profile_card_information">
+                            <div class="profile_card_left">
+                                <div class="profile_card_photo">
+                                    <img src="#" alt id="blah" class="none">
+                                </div>
+                                <button disabled class="profile_card_button">
+                                    Показать контакты
+                                </button>
+                            </div>
+                            <div class="profile_card_right">
+                                <p class="first_last_name_1"></p>
+                                <div class="profile_info_row">
+                                    <div class="profile_row"></div>
+                                    <p class ="smalltext" id="smalltext1"></p>
+                                    <div class="profile_divider"></div>
+                                    <div class="profile_card_age"></div>
+                                    <p class="smalltext" id="smalltext3"></p>
+                                    <div class="profile_divider"></div>
+                                    <div class="profile_card_row"></div>
+                                </div>
+                                <div class="plate">
+                                    <p class="plate_text"></p>
+                                </div>
+                                <div class="profile_card_aboutuser"></div>
+                                <p class="smalltext1" id="smalltext2"></p>
+                                <div class="profile_card_preference">
+                                    <div class="profile_preference_price"></div>
+                                    <div class="profile">
+                                        <div class="profile_preference_underground"></div>
+                                    </div>
+                                <div class="profile_preference_devider"></div>
+                                <div class="laststr">
+                                    <div class="laststr1"></div>
+                                    <div class="laststr2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stepbars">
+                    <div class="stepbars_container">
+                        <div class="stepbars_plate">
+                            <p class="text_paragraph"> Мы совсем про тебя ничего не знаем</p>
+                            <p class="text_paragraph_first">Расскажи о себе</p>
+                            <p class="text_paragraph_first">Люди пишут тем, кому доверяют. Тем более при поиске соседа</p>
+                        </div>
+                        <img src="https://homeet.hse.ru/static/media/sad_icon.3d1750e3d3e24e44526275ca3b14dc1c.svg" alt="sad_icon" class="stepbars_icon">
+                    </div>
+                </div>
+                <button form="registrationform" id="registrationform_button" class="registrationform_button" type="submit"> Продолжить </button>
+            </section>
+        </div>
+    </main> 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_content">
+                <div class="footer_email">
+                    <div class="link">
+                        <a href="mailto:Support@homeet.com" target="_blank" class="email" rel="noreferrer">Support@homeet.com</a>
+                        <a href="https://forms.gle/W4yJoxytwHhMq1FT9" target="_blank" class="tecnical_support" rel="noreferrer">Техническая поддержка</a>
+                    </div>
+                    <div class="footer_row">
+                        <div class="footer_links">
+                            <p class="about_service">О сервере</p>
+                            <p class="about_service">Контакты</p>
+                            <p class="about_service">Политика конфиденциальности</p>
+                        </div>
+                        <div class="icons">
+                            <div class="telegram_">
+                                <img src="../src/img/telegram_unfocus.svg" alt="icon-telegram" class="icon-telegram">
+                            </div>
+                            <div class="vk_">
+                                <img src="../src/img/vk_unfocus.svg" alt="icon-vk" class="icon-vk">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="footer_text">
+                    <p class="footer_text_1">
+                        Предложение не является публичной офертой.
+                        <br>
+                        Сервис не несёт ответственности за действия пользователей, достоверность информации и т.д.
+                    </p>
+                    <p class="footer_text_2">
+                        <p class="ftext1">Сделано в </p>
+                        <p class="ftext2">бвср</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="end_color_line"></div>
+    </footer>
+    <script src="../src/js/script1.js"></script>
+</body>
+</html>

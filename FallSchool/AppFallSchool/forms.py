@@ -5,12 +5,13 @@ User = get_user_model()
 
 class UserInfo(forms.ModelForm):
     
-    def is_valid(self) -> bool:
-        asd = super().is_valid()
-        if self.errors:
-            print(self.errors)
-        return asd
-    
+    # def is_valid(self) -> bool:
+    #     asd = super().is_valid()
+    #     if self.errors:
+    #         print(self.errors)
+    #     return asd
+    telegram = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'telegram', 'id': 'telegram'}))
+
     class Meta:
         model = User
         fields = ['avatar', 'name', 'date_of_birth', 'telegram', 'phone_number', 'description', 'grade', 'course', 'degree', 'faculty', 'program', 'job', 'job_date_of_start', 'gender']
@@ -19,7 +20,6 @@ class UserInfo(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'name'}),
             'gender': forms.TextInput(attrs={'class': 'genderInput'}),
             'date_of_birth': forms.DateInput(attrs={'class': 'date'}),
-            'telegram': forms.TextInput(attrs={'class': 'telegram', 'id': 'telegram'}),
             'phone_number': forms.TextInput(attrs={'class': 'phone', 'id': 'phone'}),
             'description': forms.Textarea(attrs={'class': 'info', 'id': 'about me'}),
             'grade': forms.TextInput(attrs={'class': 'gradeInput', 'value': 'value'}),

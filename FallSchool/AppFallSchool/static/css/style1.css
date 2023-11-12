@@ -165,7 +165,7 @@ input {
     flex-direction: column;
     position: relative;
 }
-.about__container p:not(.exampleText):not(.dateText):not(.avatar__p){
+.about__container p:not(.exampleText):not(.dateText):not(.avatar p){
     margin-top: 2px;
     color : red;
     display: none;
@@ -220,11 +220,14 @@ input {
     border-radius: 8px;
     transition: 0.25s;
     line-height: 20px;
+    display: block;
+    padding: 8px 40px;
 }
 
 .avatar__button:hover {
     background-color: #FFF;
     color: #7953C3;
+    cursor: pointer;
 }
 .gender_box {
     display: flex;

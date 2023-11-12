@@ -38,63 +38,59 @@
             </div>
             <div class="main__information">
                 <div class="first_main_block">
-                    <form action="/AppFallSchool/first__screen/" enctype="multipart/form-data" method="post" name="about__container" id="about__container" class="about__container">
+                    <form class="about__container" method="post" enctype="multipart/form-data" id="about__container" novalidate>
                         {% csrf_token %}
                         <div class="avatar">
-                            <p class="avatar__p" style="font-weight: 600; font-size: 16px;">Аватар профиля</p>
-                            <button type="button" inputmode="img" class="avatar__button"><label for="file" class="download_avatar" style=":hover{cursor: pointer}; display: block;padding: 8px 40px;">Загрузить</label></button>
-                            {{form.avatar}}
-                            <p class="avatar__p" style="font-weight: 400;font-size: 14px ; color: #aaa; line-height: 20px;">Загрузите фотографию весом не более 10мб</p>
+                            <p style="font-weight: 600; font-size: 16px;">Аватар профиля</p>
+                            <button type="button" inputmode="img" class="avatar__button"><label class="download_avatar" for="file">Загрузить</label></button>
+                            <input class="inputAvatar" id="file" type="file" style="display: none;">
+                            <p style="font-weight: 400;font-size: 14px ; color: #aaa; line-height: 20px;">Загрузите фотографию весом не более 10мб</p>  
                         </div>
                         <img class="userAvatar" src="" alt="">
                         <div class="name__gender">
                             <div class="input__name">
-                                {{form.name}}
+                                <input class="name" type="text" maxlength="30" id="name" required autocomplete="off"
+                                    required>
                                 <label for="name">Имя и фамилия</label>
                                 <p class="nameRequired">Обязательное поле</p>
                                 <p class="nameIncorrect">Неверный формат ввода</p>
                             </div>
                             <div class="gender_box">
-                                {{form.gender}}
                                 <div class="male">
-                                    <input class="custom-radio" name="name" type="radio" id="gender_0" value="Парень" >
-                                    <label class="gender" for="gender_0">Парень</label>
+                                    <input class="custom-radio" type="radio" name="gender" id="male" style="cursor: pointer;" value="Парень" required>
+                                    <label class="gender" for="male">Парень</label>
                                 </div>
                                 <div class="female">
-                                    <input class="custom-radio" name="name" type="radio" id="gender_1" value="Девушка">
-                                    <label class="gender" for="gender_1">Девушка</label>
+                                    <input class="custom-radio" type="radio" name="gender" id="female" style="cursor: pointer;" value="Девушка" required>
+                                    <label class="gender" for="female">Девушка</label>
                                 </div>
                             </div>
                         </div>
                         <div class="date" style="margin-top: 5px;">
                             <p class="dateText">Дата рождения</p>
-                            {{form.date_of_birth}}
+                            <input class="date" type="date" id="date" required autocomplete="off">
                             <p class="dateRequired">Обязательное поле</p>
                         </div>
                         <div class="telegram">
-                            {{form.telegram}}
+                            <input class="telegram" type="text" id="telegram" required autocomplete="off">
                             <label for="telegram">Телеграм</label>
                             <p class="telegramRequired">Обязательное поле</p>
                             <p class="telegramIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="telnum">
-                            {{form.phone_number}}
+                            <input class="phone" type="text" id="phone" required maxlength="11" autocomplete="off">
                             <label for="phone">Номер телефона</label>
                             <p class="phoneRequired">Обязательное поле</p>
                             <p class="phoneIncorrect">Неверный формат ввода</p>
                         </div>
                         <div class="about__me">
-                            {{form.description}}
+                            <textarea name="Me" id="about_me" cols="30" rows="10" class="info" autocomplete="off" required></textarea>
                             <label for="about_me">О себе</label>
                             <p class="aboutMeRequired">Обязательное поле</p>
-                            <p class="exampleText"
-                                style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">
+                            <p class="exampleText" style="color: #9e9e9e;width: auto; font-size: 13px; font-weight: 400;letter-spacing: -.12px;line-height: 14px;">
                                 Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень
                                 люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :) </p>
                         </div>
-                        <!-- <div class="next_button">
-                            <button type="submit" name="submit" class="next_page" form="about__container">Продолжить</button>
-                        </div> -->
                     </form>
                 </div>
                 <div class="second_main_block">
@@ -157,7 +153,7 @@
                 </div>
             </div>
             <div class="next_button">
-                <button type="submit" name="submit" class="next_page" form="about__container">Продолжить</button>
+                <button type="submit" name="submit" class="next_page" form="about__container" onclick="postData()">Продолжить</button>
             </div>
         </div>
     </main>

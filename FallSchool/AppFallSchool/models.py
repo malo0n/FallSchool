@@ -5,20 +5,22 @@ from django.contrib.auth.models import PermissionsMixin
 
 # Create your models here.
 class UserManager(BaseUserManager):
-    use_in_migrations = True
-    def _create_user(self, telegram, password, **extra_fields):
-        password=None
+    def create_user(self, telegram, password=None, **extra_fields):
         user = self.model(telegram=telegram, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-    def create_superuser(self, telegram, password, **extra_fields):
-        extra_fields.setdefault('is_superuser', True)
+        return user
+    
+    def create_superuser(self, telegram, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
-
+        extra_fields.setdefault('is_superuser', True)
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
-
-        return self._create_user(telegram, password, **extra_fields)
+        return self.create_user(telegram, password, **extra_fields)
+        # user.save(using=self._db)
+        # return 
     
 class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
@@ -41,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     job_date_of_start = models.DateField(null=True, blank=True)
     
     USERNAME_FIELD = 'telegram'
-    EMAIL_FILED = 'phone_number'
+    # EMAIL_FILED = 'phone_number'
     REQUIRED_FIELDS=[]
     objects = UserManager()
 
