@@ -241,7 +241,7 @@ inputs = document.querySelectorAll('input');
 
 
 function postData(){
-    let formData = new FormData(document.querySelector('.about__container'));
+    let formData = new FormData(document.getElementById('about__container'));
     console.log(5);
     fetch('/AppFallSchool/api/items/', {
         method: 'POST',
@@ -251,18 +251,21 @@ function postData(){
     .then(data => {
         console.log(data);
         alert('User saved successfuly!');
-        document.querySelector('.about__container').requestFullscreen();
-        fetchItems();
+        // document.querySelector('#about__container').requestFullscreen();
+        // fetchItems();
     })
+    .then()
     .catch(error => {
-        if (response.status === 400) {
-            for (const field in data.errors) {
-                const errorField = document.getElementById(`${field}Error`);
-                errorField.textContent = data.errors[field];
-            }
-        }
         console.error('Error:', error);
+        // if (error.response.status === 400) {
+        //     for (const field in data.errors) {
+        //         const errorField = document.getElementById(`${field}Error`);
+        //         errorField.textContent = data.errors[field];
+        //     }
+        // }
+       
     });
+
 }
 
 
