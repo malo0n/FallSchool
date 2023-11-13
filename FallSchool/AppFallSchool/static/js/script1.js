@@ -18,7 +18,7 @@ radioInput.forEach(element => {
             userSex.innerHTML = element.value;
             userSex.style.cssText = 'color: #040013; font-weight:400; font-size: 9px; background-color: #FFF; width: auto';
             window.localStorage.setItem('gender', element.value);
-            genderInput.value = element.value;
+            // genderInput.value = element.value;
         }
 })});
 
@@ -237,11 +237,12 @@ aboutUserInput.addEventListener('blur', () =>{
 //валидация всех полей(кнопкой Продолжить)
 submitButton = document.querySelector('.next_page');
 inputs = document.querySelectorAll('input');
-submitButton.addEventListener('click', postData());
+// submitButton.addEventListener('click', postData());
 
 
 function postData(){
-    const formData = new FormData(document.querySelector('.about__container'));
+    let formData = new FormData(document.querySelector('.about__container'));
+    console.log(5);
     fetch('/AppFallSchool/api/items/', {
         method: 'POST',
         body: formData
@@ -253,6 +254,15 @@ function postData(){
         document.querySelector('.about__container').requestFullscreen();
         fetchItems();
     })
+    .catch(error => {
+        if (response.status === 400) {
+            for (const field in data.errors) {
+                const errorField = document.getElementById(`${field}Error`);
+                errorField.textContent = data.errors[field];
+            }
+        }
+        console.error('Error:', error);
+    });
 }
 
 

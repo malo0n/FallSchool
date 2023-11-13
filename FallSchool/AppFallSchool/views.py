@@ -11,9 +11,7 @@ from rest_framework.response import Response
 # Create your views here.
 
 def first__screen(request):
-  print(request, request.method)
-  # if request.method == "POST":
-  #     return HttpResponseRedirect(redirect_to= {url('second__screen')})
+  print(request, request.method)    
   return render(request, 'AppFallSchool/first__screen.html')
 
 
@@ -49,4 +47,4 @@ def item_view(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # return HttpResponseRedirect(redirect_to= ('second__screen'))
